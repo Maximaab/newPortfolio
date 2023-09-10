@@ -1,38 +1,48 @@
 import React from 'react';
-import styled from "styled-components";
 import {SectionTitle} from "../../../components/SectionTitle";
 import {FlexWrapper} from "../../../components/FlexWrapper";
 import {Work} from "./work/Work";
-import socialImg from'./../../../assets/images/foto1.webp'
-import timerImg from'./../../../assets/images/foto2.webp'
+import socialImg from './../../../assets/images/foto1.webp'
 import {Container} from "../../../components/container/Container";
 import {TabMenu} from "./tabMenu/TabMenu";
+import {S} from "./work/Works_Styles"
 
 
 const worksItems = ["all", "landing page", "reack", "Spa"]
-export const Works = () => {
+
+const workData = [{
+    title: "Social Network",
+    src: socialImg,
+    text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+},
+    {
+        title: "Timer",
+        src: socialImg,
+        text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit  ut labore et dolore magna aliqua Ut enim"
+    },
+
+
+]
+
+
+export const Works: React.FC = () => {
     return (
-        <StyledWorks>
+        <S.Works>
             <Container>
                 <SectionTitle>My Works</SectionTitle>
 
                 <TabMenu menyItems={worksItems}/>
                 <FlexWrapper justify={"space-between"} aligne={"flex-start"} wrap={"wrap"}>
-                    <Work title={"Social Network"}
-                          src={socialImg}
-                          text={"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit."}/>
-                    <Work title={"Timer"}
-                          src={timerImg}
-                          text={"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit  ut labore et dolore magna aliqua Ut enim"}/>
+                    {workData.map((w,index)=> {
+                        return <Work title={w.title} key={index}
+                                     src={w.src}
+                                     text={w.text}/>
+                    })}
+
                 </FlexWrapper>
             </Container>
 
-        </StyledWorks>
+        </S.Works>
     );
 };
 
-const StyledWorks = styled.section`
- ${FlexWrapper} {
-   gap: 30px;
- }
-`

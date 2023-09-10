@@ -1,31 +1,72 @@
-import React from 'react';
-import styled, {css} from "styled-components";
 import {theme} from "../../../styles/Theme";
-import {Menu} from "../menu/Menu";
+import styled, {css} from "styled-components";
 
+//menu
+const Link = styled.a`
+  text-align: center;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  color: transparent;
+  `
+const Mask = styled.span`
+  position: absolute;
 
-export const MobileMenu = (props: { menyItems: Array<string> }) => {
-    return (
-        <StyledMobileMenu>
-            <BurgerButton isOpen={false}>
-                <span></span>
-            </BurgerButton>
+  top: 0;
+  left: 0;
+  display: inline-block;
+  height: 50%;
+  overflow: hidden;
+  color: ${theme.colors.accent};
 
-            <MobileMenuPopup isOpen={false}>
-                <Menu menyItems={props.menyItems}/>
+  & + & {
+    top: 50%;
 
-            </MobileMenuPopup>
-
-        </StyledMobileMenu>
-    );
-};
-
-const StyledMobileMenu = styled.nav`
-  display: none;
-
-  @media ${theme.media.tablet} {
-    display: block;
+    span {
+      transform: translateY(-50%);
+      display: inline-block;
+    }
   }
+`
+
+const MenuItem = styled.li`
+    position: relative;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    height: 3px;
+    background-color: ${theme.colors.accent};
+
+    position: absolute;
+    top: 50%;
+    left: -10px;
+    right: -10px;
+    z-index: 1;
+
+    transform: scale(0);
+    }
+  
+  &:hover {
+    &::before {
+      transform: scale(1);
+    }
+    
+    ${Mask} {
+      transform: skewX(12deg) translateX(5px);
+      color: ${theme.colors.font};
+      
+      & + ${Mask} {
+      transform: skewX(12deg) translateX(-5px);
+    }
+    }
+    
+  }
+`
+//mobile
+
+const MobileMenu = styled.nav`
+  
 `
 const MobileMenuPopup = styled.div<{isOpen: boolean}>`
   background: rgba(31, 31, 32, 0.9);
@@ -102,4 +143,24 @@ position: fixed;
     }
   }
 `
+//desk top
 
+const DesktopMenu = styled.nav`
+  ul {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+  }
+
+ 
+`
+export const S =  {
+    MenuItem,
+    Link,
+    Mask,
+    MobileMenu,
+    BurgerButton,
+    MobileMenuPopup,
+    DesktopMenu,
+
+}
