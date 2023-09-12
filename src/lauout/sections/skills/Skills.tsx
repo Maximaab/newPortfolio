@@ -7,7 +7,7 @@ import {S} from "./skill/Skills_Styles"
 
 const skillData = [
     {
-        iconId: "code",
+        iconId: "codeSvg",
         title: "html5",
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim",
 
