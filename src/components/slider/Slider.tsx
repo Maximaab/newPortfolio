@@ -2,6 +2,7 @@ import React from 'react';
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import {S} from "./Slider.Styles"
+import "./../../../src/styles/slyder.css"
 
 type SlydePropsType = {
     text: string
