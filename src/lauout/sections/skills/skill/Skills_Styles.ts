@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import {theme} from "../../../../styles/Theme";
 
-const StyledSkill = styled.div`
+const Skill = styled.div`
     width: 330px;
   flex-grow: 1;
   padding: 47px 20px 53px;
@@ -9,8 +9,7 @@ const StyledSkill = styled.div`
   @media ${theme.media.mobile} {
     padding: 62px 0 40px;
   }
-  
-  
+   
   `
 export const IconWrapper = styled.div`
     position: relative;
@@ -40,13 +39,13 @@ const SkillText = styled.p`
   line-height: 1.4;
 `
 
-const StyledSkills = styled.section`
+const Skills = styled.section`
 
 `
 export const S = {
     SkillTitle,
     SkillText,
-    StyledSkill,
+    Skill,
     IconWrapper,
-    StyledSkills,
+    Skills,
 }

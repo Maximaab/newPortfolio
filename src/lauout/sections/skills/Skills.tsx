@@ -1,6 +1,6 @@
 import React from 'react';
 import {FlexWrapper} from "../../../components/FlexWrapper";
-import {Skill} from "../skills/skill/Skill"
+import {Skill} from "./skill/Skill"
 import {SectionTitle} from "../../../components/SectionTitle"
 import {Container} from "../../../components/container/Container";
 import {S} from "./skill/Skills_Styles"
@@ -45,7 +45,7 @@ const skillData = [
 ]
 export const Skills = () => {
     return (
-        <S.StyledSkills>
+        <S.Skills>
             <Container>
                 <SectionTitle>My Skills</SectionTitle>
                 <FlexWrapper wrap={"wrap"} justify={"space-between"}>
@@ -61,7 +61,7 @@ export const Skills = () => {
             </Container>
 
 
-        </S.StyledSkills>
+        </S.Skills>
     );
 };
 
