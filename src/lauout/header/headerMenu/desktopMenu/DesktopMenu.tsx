@@ -4,10 +4,10 @@ import {Menu} from "../menu/Menu";
 
 
 
-export const DesktopMenu: React.FC<{ menyItems: Array<string> }> = (props: { menyItems: Array<string> }) => {
+export const DesktopMenu: React.FC = () => {
     return (
         <S.DesktopMenu>
-            <Menu menyItems={props.menyItems}/>
+            <Menu />
         </S.DesktopMenu>
     );
 };

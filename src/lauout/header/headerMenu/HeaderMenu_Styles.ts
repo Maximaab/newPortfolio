@@ -1,14 +1,13 @@
 import {theme} from "../../../styles/Theme";
 import styled, {css} from "styled-components";
+import {Link} from "react-scroll";
 
-//menu
-const Link = styled.a`
-  text-align: center;
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: 30px;
-  font-weight: 400;
-  color: transparent;
-  `
+const MenuItem = styled.li`
+    position: relative;
+    
+   
+`
+
 const Mask = styled.span`
   position: absolute;
 
@@ -28,9 +27,13 @@ const Mask = styled.span`
     }
   }
 `
-
-const MenuItem = styled.li`
-    position: relative;
+//menu
+const NavLink = styled(Link)`
+  text-align: center;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  color: transparent;
 
   &::before {
     content: "";
@@ -45,9 +48,9 @@ const MenuItem = styled.li`
     z-index: 1;
 
     transform: scale(0);
-    }
-  
-  &:hover {
+  }
+
+  &:hover, &.active {
     &::before {
       transform: scale(1);
     }
@@ -55,14 +58,17 @@ const MenuItem = styled.li`
     ${Mask} {
       transform: skewX(12deg) translateX(5px);
       color: ${theme.colors.font};
-      
+
       & + ${Mask} {
-      transform: skewX(12deg) translateX(-5px);
+        transform: skewX(12deg) translateX(-5px);
+      }
     }
-    }
-    
+
   }
-`
+  `
+
+
+
 //mobile
 
 const MobileMenu = styled.nav`
@@ -156,7 +162,7 @@ const DesktopMenu = styled.nav`
 `
 export const S =  {
     MenuItem,
-    Link,
+    NavLink,
     Mask,
     MobileMenu,
     BurgerButton,

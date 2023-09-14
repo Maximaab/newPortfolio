@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import {theme} from "../../../styles/Theme";
 
-const StyledContacts = styled.section`
+const Contacts = styled.section`
  
 `
-const StyledForm = styled.form`
+const Form = styled.form`
   max-width: 540px;
   width: 100%;
   display: flex;
@@ -42,6 +42,6 @@ color: ${theme.colors.font};
 `
 export const S = {
     Field,
-    StyledForm,
-    StyledContacts,
+    Form,
+    Contacts,
 }

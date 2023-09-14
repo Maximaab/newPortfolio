@@ -2,7 +2,7 @@ import styled from "styled-components";
 import {theme} from "../../../styles/Theme";
 import {font} from "../../../styles/Common";
 
-const StyledMain = styled.section`
+const Main = styled.section`
   min-height: 100vh;
   background-color: mistyrose;
   display: flex;
@@ -94,6 +94,6 @@ export const S = {
         MainTitle,
         Photo,
         PhotoWrapper,
-        StyledMain,
+        Main,
         Name,
 }

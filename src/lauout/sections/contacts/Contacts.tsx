@@ -6,19 +6,19 @@ import {S} from "./Contacts_Styles"
 
 export const Contacts:React.FC = () => {
     return (
-        <S.StyledContacts>
+        <S.Contacts id={"contact"}>
             <Container>
                 <SectionTitle>Contacts</SectionTitle>
-                <S.StyledForm>
+                <S.Form>
                     <S.Field placeholder={"name"}/>
                     <S.Field placeholder={"subject"}/>
                     <S.Field placeholder={"message"} as={"textarea"}/>
                     <Button type={"submit"}>Send message</Button>
-                </S.StyledForm>
+                </S.Form>
             </Container>
 
 
-        </S.StyledContacts>
+        </S.Contacts>
     );
 };
 
