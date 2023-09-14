@@ -40,7 +40,7 @@ const SkillText = styled.p`
 `
 
 const Skills = styled.section`
-
+position: relative;
 `
 export const S = {
     SkillTitle,

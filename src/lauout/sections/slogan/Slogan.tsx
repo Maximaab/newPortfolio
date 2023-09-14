@@ -21,6 +21,7 @@ export const Slogan:React.FC = () => {
 };
 
 const StyledSlogan = styled.section`
+  position: relative;
   min-height: 30vh;
   background-color: #d000ff;
 `

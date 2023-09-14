@@ -8,6 +8,7 @@ import {Contacts} from "./lauout/sections/contacts/Contacts";
 import {Slogan} from "./lauout/sections/slogan/Slogan";
 import {Footer} from "./lauout/footer/Footer";
 import {Particle} from "./components/partikle/Partikle";
+import {GoTopBtn} from "./components/goTopBtn/GoTopBtn";
 
 function App() {
     return (
@@ -21,6 +22,7 @@ function App() {
             <Contacts/>
             <Slogan/>
             <Footer/>
+            <GoTopBtn/>
         </div>
     );
 }
